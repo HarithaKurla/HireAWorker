@@ -28,7 +28,9 @@
         <activity android:name=".EmployerActivity" />
         <activity android:name=".SearchForWorker" />
         <activity android:name=".WorkerHome" />
-        <activity android:name=".WorkerDetails"></activity>
+        <activity android:name=".WorkerDetails" />
+        <activity android:name=".WorkerDetails1" />
+        <activity android:name=".ReplyMsgActivity"></activity>
     </application>
 
 </manifest>

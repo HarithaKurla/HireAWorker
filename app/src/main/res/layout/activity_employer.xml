@@ -46,8 +46,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
+        android:layout_width="90dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -63,29 +63,47 @@
         app:layout_constraintVertical_bias="0.267"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="158dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/capabilities_arrays"
+        android:prompt="@string/capabilities_prompt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="39dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="Desired area"
+        android:text="Capability"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintVertical_bias="0.434" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/zipcodeE"
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginBottom="8dp"
@@ -94,31 +112,13 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:hint="Enter the zipcode"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.267"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="226dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 

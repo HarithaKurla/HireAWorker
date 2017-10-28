@@ -26,4 +26,9 @@ public class WorkerHome extends AppCompatActivity {
         Intent i=new Intent(this,LoginActivity.class);
         startActivity(i);
     }
+
+    public void ReplyAction(View v){
+        Intent it = new Intent(this,ReplyMsgActivity.class);
+        startActivity(it);
+    }
 }

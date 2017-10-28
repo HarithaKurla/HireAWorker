@@ -75,7 +75,7 @@
             android:layout_marginBottom="22dp"
             android:layout_toEndOf="@+id/textView11"
             android:text="Reply"
-            android:onClick="reply"/>
+            android:onClick="ReplyAction"/>
 
         <TextView
             android:id="@+id/textView12"
@@ -96,7 +96,7 @@
             android:layout_marginBottom="22dp"
             android:layout_toEndOf="@+id/textView12"
             android:text="Reply"
-            android:onClick="reply"/>
+            android:onClick="ReplyAction"/>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

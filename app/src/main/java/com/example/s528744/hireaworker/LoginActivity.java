@@ -207,29 +207,58 @@ public class LoginActivity extends AppCompatActivity {
                // Check which radio button was clicked
 //
                String s = radioSexButton.getText().toString();
+               EditText email = (EditText) findViewById(R.id.email);
+               EditText password = (EditText) findViewById(R.id.password);
 
-               switch (s) {
-                   case "Employer": {
-                       Intent i = new Intent(this, EmployerActivity.class);
-                       startActivity(i);
+               if (email.getText().toString().length() > 0 && !email.getText().toString().matches("\\s+") ){
+
+                   if(password.getText().length()>0 && !password.getText().toString().matches("\\s+")) {
+
+                       if (email.getText().toString().equals("john.miller@gmail.com") && password.getText().toString().equals("qwerty")) {
+
+                           switch (s) {
+                               case "Employer": {
+                                   Intent i = new Intent(this, EmployerActivity.class);
+                                   startActivity(i);
+                               }
+
+                               break;
+                               case "Worker": {
+                                   Intent i = new Intent(this, WorkerHome.class);
+                                   startActivity(i);
+                               }
+
+                               break;
+
+
+                           }
+                       }
+                       else
+                       {
+                           Toast.makeText(LoginActivity.this,
+                                   "Please enter valid credentials", Toast.LENGTH_SHORT).show();
+                       }
                    }
+                       else
+                       {
+                           password.setError("Please enter password");
+                           //Toast.makeText(LoginActivity.this,
+                                  // "Please enter password", Toast.LENGTH_SHORT).show();
+                       }
 
-                   break;
-                   case "Worker": {
-                       Intent i = new Intent(this, WorkerHome.class);
-                       startActivity(i);
-                   }
-
-                   break;
-
-
-
+           }
+           else
+               {
+                   email.setError("Please enter email address");
+                  // Toast.makeText(LoginActivity.this,
+                          // "Please enter email address", Toast.LENGTH_SHORT).show();
                }
            }
            else
            {
-               Toast.makeText(LoginActivity.this,
-                       "Please select either Employer or Worker", Toast.LENGTH_SHORT).show();
+               //radioSexButton.setError("Please select either Employer or Worker");
+              Toast.makeText(LoginActivity.this,
+                      "Please select either Employer or Worker", Toast.LENGTH_SHORT).show();
            }
 
     }

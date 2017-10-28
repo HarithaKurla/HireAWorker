@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.s528744.hireaworker.WorkerDetails">
+    tools:context="com.example.s528744.hireaworker.WorkerDetails1">
 
     <Button
         android:id="@+id/button4"
@@ -37,7 +37,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:fontFamily="serif"
-            android:text="John Details"
+            android:text="Mike Details"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
@@ -122,7 +122,7 @@
             android:layout_alignTop="@+id/textView2"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="John"
+            android:text="Mike"
             android:textAlignment="textStart"
             android:textSize="20sp" />
 
@@ -136,7 +136,7 @@
             android:layout_alignTop="@+id/textView3"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Miller"
+            android:text="Bell"
             android:textAlignment="textStart"
             android:textSize="20sp" />
 
@@ -193,7 +193,7 @@
             android:layout_toEndOf="@+id/textView7"
             android:ems="10"
             android:inputType="number"
-            android:text="6463068354"
+            android:text="6465555555"
             android:textAlignment="textStart"
             android:textSize="20sp" />
 
@@ -207,7 +207,7 @@
             android:layout_alignTop="@+id/textView8"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:text="john@gmail.com"
+            android:text="mike@gmail.com"
             android:textAlignment="textStart"
             android:textSize="20sp" />
 
