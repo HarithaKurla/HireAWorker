@@ -14,6 +14,11 @@ public class SearchForWorker extends AppCompatActivity {
     public SearchForWorker() {
     }
 
+//
+// 3) SearchForWorker
+//    click on John/ Mike listview to view his details
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

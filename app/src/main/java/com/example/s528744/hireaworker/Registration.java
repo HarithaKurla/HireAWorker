@@ -27,6 +27,9 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
     }
 
+//      5)Registration
+//    Enter all the details and click on submit
+
     public void register(View v) {
         EditText Name = (EditText) findViewById(R.id.editText);
         EditText mail = (EditText) findViewById(R.id.editText1);

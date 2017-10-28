@@ -15,6 +15,10 @@ public class ForgotPassword extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
     }
 
+//
+//    6) ForgotPassword
+//    Enter new password and confirm password(both should be same) and click update password
+
     public void recoverPassword(View v) {
         EditText newpassword = (EditText) findViewById(R.id.newPassword);
         EditText confirmpassword = (EditText) findViewById(R.id.confirmPassword);

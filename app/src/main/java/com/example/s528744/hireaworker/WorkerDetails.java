@@ -14,6 +14,11 @@ public class WorkerDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_details);
     }
+//     4)WorkerDetails
+//    Rate is optional
+//    enter message and click on contact
+//    click signout
+
 
     public void contact(View view)
     {

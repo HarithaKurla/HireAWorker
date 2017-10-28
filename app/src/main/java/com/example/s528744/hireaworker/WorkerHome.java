@@ -27,6 +27,10 @@ public class WorkerHome extends AppCompatActivity {
         startActivity(i);
     }
 
+//      8)WorkerHome
+//    click on reply
+//    enter message and click on immage >
+//    click Signout
     public void ReplyAction(View v){
         Intent it = new Intent(this,ReplyMsgActivity.class);
         startActivity(it);

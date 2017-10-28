@@ -17,6 +17,11 @@ public class EmployerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_employer);
     }
 
+//2) EmployerActivity:
+//    zipcode-64468
+//    Capability- Painter
+//    click search
+
     public void search(View v) {
 
         EditText zipcode = (EditText) findViewById(R.id.zipcodeE);
