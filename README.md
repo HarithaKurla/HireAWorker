@@ -24,7 +24,6 @@ Team Members Details:
     Rate is optional
     enter message and click on contact
     click signout
-    
   5)Registration
     Enter all the details and click on submit
     
