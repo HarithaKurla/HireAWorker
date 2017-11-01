@@ -11,6 +11,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//created by raveendranath eluri
+
 public class Registration extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioGroup radioGroup2;
