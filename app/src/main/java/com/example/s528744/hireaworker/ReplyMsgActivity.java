@@ -4,6 +4,8 @@ package com.example.s528744.hireaworker;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,6 +16,20 @@ public class ReplyMsgActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reply_msg);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.sign_out:
+                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
     }
     public void message(View view){
         EditText msg=(EditText) findViewById(R.id.msgET);

@@ -6,44 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.s528744.hireaworker.WorkerHome">
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="84dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="signout"
-        android:text="Signout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <RelativeLayout
         android:layout_width="346dp"
         android:layout_height="512dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="45dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Welcome John"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp" />
+        android:layout_marginTop="45dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView10"
@@ -74,8 +45,8 @@
             android:layout_alignBottom="@+id/textView11"
             android:layout_marginBottom="22dp"
             android:layout_toEndOf="@+id/textView11"
-            android:text="Reply"
-            android:onClick="ReplyAction"/>
+            android:onClick="ReplyAction"
+            android:text="Reply" />
 
         <TextView
             android:id="@+id/textView12"
@@ -95,8 +66,22 @@
             android:layout_alignBottom="@+id/textView12"
             android:layout_marginBottom="22dp"
             android:layout_toEndOf="@+id/textView12"
-            android:text="Reply"
-            android:onClick="ReplyAction"/>
+            android:onClick="ReplyAction"
+            android:text="Reply" />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Welcome John"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>
