@@ -15,6 +15,7 @@ public class WorkerDetails1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setLogo(R.drawable.ic_group_black_24dp);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_worker_details1);
@@ -26,10 +27,12 @@ public class WorkerDetails1 extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.sign_out:
-                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(i);
+        if (item.getItemId()==android.R.id.home) {
+            this.finish();
+        }
+        else if(item.getItemId()==R.id.sign_out){
+            Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

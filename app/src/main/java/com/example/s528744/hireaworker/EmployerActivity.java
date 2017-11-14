@@ -28,10 +28,12 @@ public class EmployerActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.sign_out:
-                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(i);
+        if (item.getItemId()==android.R.id.home) {
+            this.finish();
+        }
+        else if(item.getItemId()==R.id.sign_out){
+            Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

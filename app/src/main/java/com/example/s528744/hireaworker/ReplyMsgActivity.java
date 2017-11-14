@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 // created by raveendranath eluri
 public class ReplyMsgActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class ReplyMsgActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setLogo(R.drawable.ic_group_black_24dp);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_reply_msg);
@@ -27,15 +29,20 @@ public class ReplyMsgActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.sign_out:
-                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(i);
+        if (item.getItemId()==android.R.id.home) {
+            this.finish();
+        }
+        else if(item.getItemId()==R.id.sign_out){
+            Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
     public void message(View view){
         EditText msg=(EditText) findViewById(R.id.msgET);
+//        TextView ph = (TextView) findViewById(R.id.editText6);
+//        String s =ph.getEditableText().toString();
+//        msg.setText(s);
         if(msg.getText().toString().length()<=0||msg.getText().toString().matches("\\s+")) {
 
             msg.setError("type your message");

@@ -3,6 +3,7 @@ package com.example.s528744.hireaworker;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -27,9 +28,17 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setLogo(R.drawable.ic_group_black_24dp);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_registration);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        if (item.getItemId()==android.R.id.home) {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 //      5)Registration
