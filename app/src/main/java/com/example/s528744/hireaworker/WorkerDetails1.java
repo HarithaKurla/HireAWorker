@@ -16,7 +16,7 @@ public class WorkerDetails1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.ic_group_black_24dp);
+        getSupportActionBar().setLogo(R.drawable.worker1);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_worker_details1);
     }
