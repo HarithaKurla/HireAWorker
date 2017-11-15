@@ -29,7 +29,7 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.ic_group_black_24dp);
+        getSupportActionBar().setLogo(R.drawable.worker1);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_registration);
     }
@@ -45,7 +45,8 @@ public class Registration extends AppCompatActivity {
 //    Enter all the details and click on submit
 
     public void register(View v) {
-        EditText Name = (EditText) findViewById(R.id.editText);
+        EditText firstName = (EditText) findViewById(R.id.Fname);
+        EditText lastName = (EditText) findViewById(R.id.Lname);
         EditText mail = (EditText) findViewById(R.id.editText1);
         EditText address = (EditText) findViewById(R.id.editText5);
         EditText zip = (EditText) findViewById(R.id.editText4);
@@ -67,8 +68,12 @@ public class Registration extends AppCompatActivity {
         }
 
 
-        if (Name.getText().toString().trim().equals("")) {
-            Name.setError("Name is required!");
+        if (firstName.getText().toString().trim().equals("")) {
+            firstName.setError("Name is required!");
+        }
+
+        if (lastName.getText().toString().trim().equals("")) {
+            lastName.setError("Name is required!");
         }
         if (mail.getText().toString().trim().equals("")) {
             mail.setError("Email is required!");
