@@ -46,6 +46,7 @@ public class Registration extends AppCompatActivity {
 
     public void register(View v) {
         EditText Name = (EditText) findViewById(R.id.editText);
+//        EditText LName = (EditText) findViewById(R.id.Lname);
         EditText mail = (EditText) findViewById(R.id.editText1);
         EditText address = (EditText) findViewById(R.id.editText5);
         EditText zip = (EditText) findViewById(R.id.editText4);
