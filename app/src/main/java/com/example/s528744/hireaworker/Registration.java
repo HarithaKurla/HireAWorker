@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.backendless.Backendless;
+
 //created by raveendranath eluri
 
 public class Registration extends AppCompatActivity {
@@ -32,6 +34,9 @@ public class Registration extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.worker1);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_registration);
+        Backendless.setUrl( Defaults.SERVER_URL );
+        Backendless.initApp( getApplicationContext(), Defaults.APPLICATION_ID, Defaults.API_KEY );
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
