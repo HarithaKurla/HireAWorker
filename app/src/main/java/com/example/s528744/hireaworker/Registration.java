@@ -3,6 +3,7 @@ package com.example.s528744.hireaworker;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 
 //created by raveendranath eluri
 
@@ -59,10 +62,9 @@ public class Registration extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.editText7);
         EditText exp = (EditText) findViewById(R.id.editText6);
         Spinner cap = (Spinner) findViewById(R.id.spinner);
-//        radioGroup = (RadioGroup) findViewById(R.id.empwork);
-//        RadioButton radioButton = (RadioButton) findViewById(R.id.radioEmployr);
-//        radioGroup2 = (RadioGroup) findViewById(R.id.gender);
-//        RadioButton radioButton1 = (RadioButton) findViewById(R.id.radioFemale);
+       RadioGroup radioUserGroup = (RadioGroup) findViewById(R.id.userRadioGroup);
+        RadioButton userType;
+
         rb3  = (RadioButton)findViewById(R.id.radioWorkr);
         rb4  = (RadioButton)findViewById(R.id.radioEmployr);
 
@@ -98,7 +100,7 @@ public class Registration extends AppCompatActivity {
         if (exp.getText().toString().trim().equals("")) {
             exp.setError("Experience is required!");
         }
-        if (!cap.isSelected()) {
+        if (cap.getSelectedItem().toString()=="Select") {
 
 
             Toast.makeText(getApplicationContext(), "Please select capabilities", Toast.LENGTH_SHORT).show();
@@ -108,8 +110,39 @@ public class Registration extends AppCompatActivity {
 
 
         else {
+            RegistrationInfo registerUser = new RegistrationInfo();
+            registerUser.F_Name=firstName.getText().toString();
+            registerUser.L_Name=lastName.getText().toString();
+            registerUser.Email=mail.getText().toString();
+            int selectedId = radioUserGroup.getCheckedRadioButtonId();
+
+            userType = (RadioButton) findViewById(selectedId);
+
+            String s = userType.getText().toString();
+            registerUser.User_Type=s;
+            registerUser.Address=address.getText().toString();
+            registerUser.Zipcode= Integer.parseInt(zip.getText().toString());
+            registerUser.Password=password.getText().toString();
+            registerUser.PhoneNumber=phNum.getText().toString();
+            registerUser.Capability=cap.getSelectedItem().toString();
+            registerUser.Experience=Integer.parseInt(exp.getText().toString());
+            Backendless.Data.of( RegistrationInfo.class ).save(registerUser, new AsyncCallback<RegistrationInfo>() {
+
+
+                @Override
+                public void handleResponse(RegistrationInfo response) {
+                    Log.d("DB","Inserted values into table"+response);
+                }
+
+                @Override
+                public void handleFault(BackendlessFault fault) {
+                    Log.e( "MYAPP", "Server reported an error " + fault.getMessage() );
+                }
+            });
+
             Intent it = new Intent(this, LoginActivity.class);
             startActivity(it);
+            Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_SHORT).show();
         }
     }
 

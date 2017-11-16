@@ -15,7 +15,7 @@ public class RegistrationInfo {
     public String Address;
     public int Zipcode;
     public String Password;
-    public int PhoneNumber;
+    public String PhoneNumber;
     public String Capability;
     public int Experience;
     public String objectId;
