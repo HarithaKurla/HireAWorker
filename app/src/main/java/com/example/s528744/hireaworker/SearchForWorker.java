@@ -30,7 +30,7 @@ public class SearchForWorker extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_search_for_worker);
 
-        String[] workers={"John                     Good                     $200","Mike                     Fair                   $150"};
+        String[] workers={"John Good $200","Mike Fair $150"};
         ListAdapter workAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,workers);
         ListView workerAdapterList = (ListView) findViewById(R.id.listView);
         workerAdapterList.setAdapter(workAdapter);
