@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +35,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.backendless.Backendless;
+import com.backendless.IDataStore;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.DataQueryBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +83,8 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.worker1);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_login);
+        Backendless.setUrl( Defaults.SERVER_URL );
+        Backendless.initApp( getApplicationContext(), Defaults.APPLICATION_ID, Defaults.API_KEY );
     }
 
 
@@ -95,69 +104,105 @@ public class LoginActivity extends AppCompatActivity {
        public void onSubmit(View view) {
 
 
-    radioSexGroup = (RadioGroup) findViewById(R.id.radioGroup);
-       // boolean checked = ((RadioButton) view).isChecked();
-    int selectedId = radioSexGroup.getCheckedRadioButtonId();
-           if(selectedId!=-1) {
+           radioSexGroup = (RadioGroup) findViewById(R.id.radioGroup);
+           // boolean checked = ((RadioButton) view).isChecked();
+           int selectedId = radioSexGroup.getCheckedRadioButtonId();
+           if (selectedId != -1) {
                radioSexButton = (RadioButton) findViewById(selectedId);
                // Check which radio button was clicked
 //
-               String s = radioSexButton.getText().toString();
-               EditText email = (EditText) findViewById(R.id.email);
-               EditText password = (EditText) findViewById(R.id.password);
+               final String s = radioSexButton.getText().toString();
+               final EditText email = (EditText) findViewById(R.id.email);
+               final String emailID = email.getText().toString();
+               final EditText password = (EditText) findViewById(R.id.password);
+               final String passcode = password.getText().toString();
 
-               if (email.getText().toString().length() > 0 && !email.getText().toString().matches("\\s+") ){
+               if (emailID.length() > 0 && !emailID.matches("\\s+")) {
 
-                   if(password.getText().length()>0 && !password.getText().toString().matches("\\s+")) {
+                   if (passcode.length() > 0 && !passcode.matches("\\s+")) {
 
-                       if (email.getText().toString().equals("john.miller@gmail.com") && password.getText().toString().equals("qwerty")) {
+//                       if (email.getText().toString().equals("john.miller@gmail.com") && password.getText().toString().equals("qwerty")) {
 
-                           switch (s) {
-                               case "Employer": {
-                                   Intent i = new Intent(this, EmployerActivity.class);
-                                   startActivity(i);
-                               }
+                       IDataStore<RegistrationInfo> userStorage = Backendless.Data.of(RegistrationInfo.class);
+                       DataQueryBuilder query = DataQueryBuilder.create();
+                       String value="Email='"+emailID+"' and User_Type='"+s+"'";
+                       query.setWhereClause(value);
+                       userStorage.find(query, new AsyncCallback<List<RegistrationInfo>>() {
 
-                               break;
-                               case "Worker": {
-                                   Intent i = new Intent(this, WorkerHome.class);
-                                   startActivity(i);
-                               }
+                           @Override
+                           public void handleResponse(List<RegistrationInfo> response) {
+                               Log.d("Printing : ", "user Details: " + response);
 
-                               break;
+                               String test = response.toString();
+                               Log.d("Printing : ", "user test: " + test);
+
+
+                                   switch (s) {
+
+                                       case "Employer":
+                                           if ((test.contains(emailID) && test.contains(passcode)) &&(test.contains(s)) ){
+                                               Intent i = new Intent(getApplicationContext(), EmployerActivity.class);
+                                               startActivity(i);
+                                           }
+                                           else
+                                           {
+                                               Toast.makeText(getApplicationContext(), "Please enter valid credentails", Toast.LENGTH_SHORT).show();
+                                           }
+
+                                           break;
+                                       case "Worker":
+                                           if ((test.contains(emailID) && test.contains(passcode)) &&(test.contains(s)) ){
+                                               Intent i1 = new Intent(getApplicationContext(), WorkerHome.class);
+                                               startActivity(i1);
+
+                                           }
+                                           else
+                                           {
+                                               Toast.makeText(getApplicationContext(), "Please enter valid credentails", Toast.LENGTH_SHORT).show();
+                                           }
+                                           break;
+
+
+                                   }
+
 
 
                            }
-                       }
-                       else
-                       {
-                           Toast.makeText(LoginActivity.this,
-                                   "Please enter valid credentials", Toast.LENGTH_SHORT).show();
-                       }
+
+                           @Override
+                           public void handleFault(BackendlessFault fault) {
+                               Log.e("MYAPP", "Server reported an error " + fault.getMessage());
+                           }
+                       });
+
                    }
-                       else
-                       {
-                           password.setError("Please enter password");
-                           //Toast.makeText(LoginActivity.this,
-                                  // "Please enter password", Toast.LENGTH_SHORT).show();
-                       }
+                   else {
+                       password.setError("Please enter password");
+                       //Toast.makeText(LoginActivity.this,
+                       // "Please enter password", Toast.LENGTH_SHORT).show();
+                   }
 
-           }
-           else
-               {
-                   email.setError("Please enter email address");
-                  // Toast.makeText(LoginActivity.this,
-                          // "Please enter email address", Toast.LENGTH_SHORT).show();
+
+//                            else {
+//                           Toast.makeText(LoginActivity.this,
+//                                   "Please enter valid credentials", Toast.LENGTH_SHORT).show();
+//                       }
                }
-           }
-           else
-           {
+
+            else {
+                   email.setError("Please enter email address");
+                   // Toast.makeText(LoginActivity.this,
+                   // "Please enter email address", Toast.LENGTH_SHORT).show();
+               }}
+            else {
                //radioSexButton.setError("Please select either Employer or Worker");
-              Toast.makeText(LoginActivity.this,
-                      "Please select either Employer or Worker", Toast.LENGTH_SHORT).show();
+               Toast.makeText(LoginActivity.this,
+                       "Please select either Employer or Worker", Toast.LENGTH_SHORT).show();
            }
 
-    }
+       }
+
+
     public void NewuserAction(View v){
         Intent it = new Intent(this,Registration.class);
         startActivity(it);
