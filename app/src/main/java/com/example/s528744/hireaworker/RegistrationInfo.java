@@ -22,22 +22,23 @@ public class RegistrationInfo {
     public Date created;
     public Date updated;
 
+
+
     @Override
     public String toString() {
-        return "RegistrationInfo{" +
-                "F_Name='" + F_Name + '\'' +
+        return  "Email='" + Email + '\'' +
+                ", Password='" + Password + '\'' +
+                ", F_Name='" + F_Name + '\'' +
                 ", L_Name='" + L_Name + '\'' +
-                ", Email='" + Email + '\'' +
                 ", User_Type='" + User_Type + '\'' +
                 ", Address='" + Address + '\'' +
                 ", Zipcode=" + Zipcode +
-                ", Password='" + Password + '\'' +
                 ", PhoneNumber=" + PhoneNumber +
                 ", Capability='" + Capability + '\'' +
                 ", Experience=" + Experience +
                 ", objectId='" + objectId + '\'' +
                 ", created=" + created +
-                ", updated=" + updated +
-                '}';
+                ", updated=" + updated
+                ;
     }
 }
