@@ -1,8 +1,8 @@
 package com.example.s528744.hireaworker;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
@@ -61,6 +60,7 @@ public class Registration extends AppCompatActivity {
         EditText phNum = (EditText) findViewById(R.id.editText3);
         EditText password = (EditText) findViewById(R.id.editText7);
         EditText exp = (EditText) findViewById(R.id.editText6);
+        EditText cost_hr=(EditText) findViewById(R.id.costperhour);
         Spinner cap = (Spinner) findViewById(R.id.spinner);
        RadioGroup radioUserGroup = (RadioGroup) findViewById(R.id.userRadioGroup);
         RadioButton userType;
@@ -126,6 +126,7 @@ public class Registration extends AppCompatActivity {
             registerUser.PhoneNumber=phNum.getText().toString();
             registerUser.Capability=cap.getSelectedItem().toString();
             registerUser.Experience=Integer.parseInt(exp.getText().toString());
+            registerUser.Cost_Per_Hour=cost_hr.getText().toString();
             Backendless.Data.of( RegistrationInfo.class ).save(registerUser, new AsyncCallback<RegistrationInfo>() {
 
 

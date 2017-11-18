@@ -15,6 +15,7 @@ public class RegistrationInfo {
     public String Address;
     public int Zipcode;
     public String Password;
+    public String Cost_Per_Hour;
     public String PhoneNumber;
     public String Capability;
     public int Experience;
@@ -23,22 +24,23 @@ public class RegistrationInfo {
     public Date updated;
 
 
-
     @Override
     public String toString() {
-        return  "Email='" + Email + '\'' +
-                ", Password='" + Password + '\'' +
-                ", F_Name='" + F_Name + '\'' +
+        return "RegistrationInfo{" +
+                "F_Name='" + F_Name + '\'' +
                 ", L_Name='" + L_Name + '\'' +
+                ", Email='" + Email + '\'' +
                 ", User_Type='" + User_Type + '\'' +
                 ", Address='" + Address + '\'' +
                 ", Zipcode=" + Zipcode +
-                ", PhoneNumber=" + PhoneNumber +
+                ", Password='" + Password + '\'' +
+                ", Cost_Per_Hour='" + Cost_Per_Hour + '\'' +
+                ", PhoneNumber='" + PhoneNumber + '\'' +
                 ", Capability='" + Capability + '\'' +
                 ", Experience=" + Experience +
                 ", objectId='" + objectId + '\'' +
                 ", created=" + created +
-                ", updated=" + updated
-                ;
+                ", updated=" + updated +
+                '}';
     }
 }
