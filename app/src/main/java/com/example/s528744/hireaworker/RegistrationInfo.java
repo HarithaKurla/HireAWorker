@@ -15,7 +15,6 @@ public class RegistrationInfo {
     public String Address;
     public int Zipcode;
     public String Password;
-    public String Cost_Per_Hour;
     public String PhoneNumber;
     public String Capability;
     public int Experience;
@@ -23,10 +22,10 @@ public class RegistrationInfo {
     public Date created;
     public Date updated;
 
-    public RegistrationInfo(String f_Name, String phoneNumber,String cost_Per_Hour) {
+    public RegistrationInfo(String f_Name, String phoneNumber) {
         F_Name = f_Name;
         PhoneNumber = phoneNumber;
-        Cost_Per_Hour = cost_Per_Hour;
+
     }
 
     public RegistrationInfo() {
@@ -81,13 +80,7 @@ public class RegistrationInfo {
         Zipcode = zipcode;
     }
 
-    public String getCost_Per_Hour() {
-        return Cost_Per_Hour;
-    }
 
-    public void setCost_Per_Hour(String cost_Per_Hour) {
-        Cost_Per_Hour = cost_Per_Hour;
-    }
 
     public String getPhoneNumber() {
         return PhoneNumber;
@@ -123,7 +116,7 @@ public class RegistrationInfo {
                 ", Address='" + Address + '\'' +
                 ", Zipcode=" + Zipcode +
                 ", Password='" + Password + '\'' +
-                ", Cost_Per_Hour='" + Cost_Per_Hour + '\'' +
+
                 ", PhoneNumber='" + PhoneNumber + '\'' +
                 ", Capability='" + Capability + '\'' +
                 ", Experience=" + Experience +

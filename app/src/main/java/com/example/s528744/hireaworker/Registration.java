@@ -126,7 +126,7 @@ public class Registration extends AppCompatActivity {
             registerUser.PhoneNumber=phNum.getText().toString();
             registerUser.Capability=cap.getSelectedItem().toString();
             registerUser.Experience=Integer.parseInt(exp.getText().toString());
-            registerUser.Cost_Per_Hour=cost_hr.getText().toString();
+
             Backendless.Data.of( RegistrationInfo.class ).save(registerUser, new AsyncCallback<RegistrationInfo>() {
 
 

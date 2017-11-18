@@ -208,10 +208,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void forgotMethod(View v){
-        Intent it = new Intent(this,ForgotPassword.class);
-        startActivity(it);
-    }
+
 
 //    public void onSubmit(View view){
 //

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -56,12 +57,25 @@ public class SearchForWorker extends AppCompatActivity {
                     if (response.size() > 0) {
                         for (int i = 0; i < response.size(); i++) {
 //                    ListView lv = (ListView)   findViewById(R.id.ListerLV);
-                            list.add(new RegistrationInfo(response.get(i).getF_Name(), response.get(i).getPhoneNumber(),
-                                    response.get(i).getCost_Per_Hour()));
+                            list.add(new RegistrationInfo(response.get(i).getF_Name(), response.get(i).getPhoneNumber()));
 
                         }
                         myArrayAdapter = new MyArrayAdapter(getApplicationContext(), R.layout.workers_listview, R.id.textView13, list);
                         lv.setAdapter(myArrayAdapter);
+                        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                if(position==0){
+                                    Intent i = new Intent(getApplicationContext(),WorkerDetails.class);
+                                    startActivity(i);
+                                }
+                                if(position==1){
+                                    Intent i = new Intent(getApplicationContext(),WorkerDetails1.class);
+                                    startActivity(i);
+                                }
+
+                            }
+                        });
                     } else {
                         Toast.makeText(getApplicationContext(), "No orders found", Toast.LENGTH_SHORT).show();
 

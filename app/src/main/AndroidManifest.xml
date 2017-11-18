@@ -25,7 +25,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registration" />
-        <activity android:name=".ForgotPassword" />
         <activity android:name=".EmployerActivity" />
         <activity android:name=".SearchForWorker" />
         <activity android:name=".WorkerHome" />
