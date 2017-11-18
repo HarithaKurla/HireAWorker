@@ -11,6 +11,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.backendless.Backendless;
+import com.backendless.IDataStore;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.DataQueryBuilder;
+
+import java.util.List;
+
 public class EmployerActivity extends AppCompatActivity {
 
     @Override
@@ -20,6 +28,8 @@ public class EmployerActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.worker1);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_employer);
+        Backendless.setUrl( Defaults.SERVER_URL );
+        Backendless.initApp( getApplicationContext(), Defaults.APPLICATION_ID, Defaults.API_KEY );
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -51,15 +61,26 @@ public class EmployerActivity extends AppCompatActivity {
         if (zipcode.getText().toString().length()>0 && !zipcode.getText().toString().matches("\\s+")) {
             Log.d("selected value is:    ", "" + s.getSelectedItem().toString().trim());
             if (!s.getSelectedItem().toString().trim().equals("Select")) {
-                if (zipcode.getText().toString().equals("64468") && s.getSelectedItem().toString().trim().equals("Painter")) {
-                    Intent i = new Intent(this, SearchForWorker.class);
-                    startActivity(i);
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),
-                            "Please enter valid zipcode", Toast.LENGTH_SHORT).show();
-                }
+                IDataStore<RegistrationInfo> employersearch = Backendless.Data.of(RegistrationInfo.class);
+                DataQueryBuilder query = DataQueryBuilder.create();
+                String value="Zipcode="+Integer.parseInt(zipcode.getText().toString())+" and Capability='"+s.getSelectedItem().toString()+"'";
+                query.setWhereClause(value);
+                employersearch.find(query, new AsyncCallback<List<RegistrationInfo>>() {
+
+                    @Override
+                    public void handleResponse(List<RegistrationInfo> response) {
+                        Log.d("Printing : ", "Deatils " + response);
+                    }
+
+                    @Override
+                    public void handleFault(BackendlessFault fault) {
+                        Log.e("MYAPP", "Server reported an error " + fault.getMessage());
+                    }
+                });
+                Intent i = new Intent(this, SearchForWorker.class);
+                startActivity(i);
+
+
             }
             else
             {
