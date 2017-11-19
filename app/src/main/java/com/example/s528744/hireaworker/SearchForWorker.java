@@ -57,7 +57,7 @@ public class SearchForWorker extends AppCompatActivity {
                     if (response.size() > 0) {
                         for (int i = 0; i < response.size(); i++) {
 //                    ListView lv = (ListView)   findViewById(R.id.ListerLV);
-                            list.add(new RegistrationInfo(response.get(i).getF_Name(), response.get(i).getPhoneNumber()));
+                            list.add(new RegistrationInfo(response.get(i).getFname(), response.get(i).getPhonenumber(),response.get(i).getCost()));
 
                         }
                         myArrayAdapter = new MyArrayAdapter(getApplicationContext(), R.layout.workers_listview, R.id.textView13, list);

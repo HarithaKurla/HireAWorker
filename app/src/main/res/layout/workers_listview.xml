@@ -13,19 +13,28 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="13dp"
+            android:layout_width="129dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.80"
+
             android:text="Name"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView14"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+
+            android:text="Contact"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.66"
-            android:text="Contact"
-            android:textSize="30sp" />
+            android:inputType="number"
+
+            android:text="Cost/hr"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

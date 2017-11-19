@@ -111,21 +111,22 @@ public class Registration extends AppCompatActivity {
 
         else {
             RegistrationInfo registerUser = new RegistrationInfo();
-            registerUser.F_Name=firstName.getText().toString();
-            registerUser.L_Name=lastName.getText().toString();
+            registerUser.Fname=firstName.getText().toString();
+            registerUser.Lname=lastName.getText().toString();
             registerUser.Email=mail.getText().toString();
             int selectedId = radioUserGroup.getCheckedRadioButtonId();
 
             userType = (RadioButton) findViewById(selectedId);
 
             String s = userType.getText().toString();
-            registerUser.User_Type=s;
+            registerUser.Usertype=s;
             registerUser.Address=address.getText().toString();
             registerUser.Zipcode= Integer.parseInt(zip.getText().toString());
             registerUser.Password=password.getText().toString();
-            registerUser.PhoneNumber=phNum.getText().toString();
+            registerUser.Phonenumber=phNum.getText().toString();
             registerUser.Capability=cap.getSelectedItem().toString();
             registerUser.Experience=Integer.parseInt(exp.getText().toString());
+            registerUser.Cost=Integer.parseInt(cost_hr.getText().toString());
 
             Backendless.Data.of( RegistrationInfo.class ).save(registerUser, new AsyncCallback<RegistrationInfo>() {
 

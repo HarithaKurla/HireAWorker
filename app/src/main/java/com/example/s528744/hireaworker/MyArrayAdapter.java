@@ -28,14 +28,16 @@ public class MyArrayAdapter extends ArrayAdapter {
         View v = super.getView(position, convertView, parent);
         TextView nameTV = (TextView) v.findViewById(R.id.textView13);
         TextView contactTV = (TextView) v.findViewById(R.id.textView14);
-
+        TextView costTV = (TextView) v.findViewById(R.id.textView16);
 
 
 
         RegistrationInfo o1 = (RegistrationInfo) getItem(position);
 
-        nameTV.setText(String.valueOf(o1.getF_Name()));
-        contactTV.setText(o1.getPhoneNumber() + "");
+
+        nameTV.setText(o1.getFname().toString());
+        contactTV.setText(o1.getPhonenumber().toString() + "");
+        costTV.setText(o1.getCost());
 
 
         return v;

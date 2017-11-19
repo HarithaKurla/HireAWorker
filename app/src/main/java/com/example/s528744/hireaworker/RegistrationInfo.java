@@ -8,44 +8,46 @@ import java.util.Date;
 
 public class RegistrationInfo {
 
-    public String F_Name;
-    public String L_Name;
+    public String Fname;
+    public String Lname;
     public String Email;
-    public String User_Type;
+    public String Usertype;
     public String Address;
     public int Zipcode;
     public String Password;
-    public String PhoneNumber;
+    public String Phonenumber;
     public String Capability;
     public int Experience;
+    public int Cost;
     public String objectId;
     public Date created;
     public Date updated;
 
-    public RegistrationInfo(String f_Name, String phoneNumber) {
-        F_Name = f_Name;
-        PhoneNumber = phoneNumber;
-
-    }
 
     public RegistrationInfo() {
 
     }
 
-    public String getF_Name() {
-        return F_Name;
+    public RegistrationInfo(String fname, String phonenumber, int cost) {
+        Fname = fname;
+        Phonenumber = phonenumber;
+        Cost = cost;
     }
 
-    public void setF_Name(String f_Name) {
-        F_Name = f_Name;
+    public String getFname() {
+        return Fname;
     }
 
-    public String getL_Name() {
-        return L_Name;
+    public void setFname(String fname) {
+        Fname = fname;
     }
 
-    public void setL_Name(String l_Name) {
-        L_Name = l_Name;
+    public String getLname() {
+        return Lname;
+    }
+
+    public void setLname(String lname) {
+        Lname = lname;
     }
 
     public String getEmail() {
@@ -56,12 +58,12 @@ public class RegistrationInfo {
         Email = email;
     }
 
-    public String getUser_Type() {
-        return User_Type;
+    public String getUsertype() {
+        return Usertype;
     }
 
-    public void setUser_Type(String user_Type) {
-        User_Type = user_Type;
+    public void setUsertype(String usertype) {
+        Usertype = usertype;
     }
 
     public String getAddress() {
@@ -80,14 +82,12 @@ public class RegistrationInfo {
         Zipcode = zipcode;
     }
 
-
-
-    public String getPhoneNumber() {
-        return PhoneNumber;
+    public String getPhonenumber() {
+        return Phonenumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+    public void setPhonenumber(String phonenumber) {
+        Phonenumber = phonenumber;
     }
 
     public String getCapability() {
@@ -106,20 +106,28 @@ public class RegistrationInfo {
         Experience = experience;
     }
 
+    public int getCost() {
+        return Cost;
+    }
+
+    public void setCost(int cost) {
+        Cost = cost;
+    }
+
     @Override
     public String toString() {
         return "RegistrationInfo{" +
-                "F_Name='" + F_Name + '\'' +
-                ", L_Name='" + L_Name + '\'' +
+                "Fname='" + Fname + '\'' +
+                ", Lname='" + Lname + '\'' +
                 ", Email='" + Email + '\'' +
-                ", User_Type='" + User_Type + '\'' +
+                ", Usertype='" + Usertype + '\'' +
                 ", Address='" + Address + '\'' +
                 ", Zipcode=" + Zipcode +
                 ", Password='" + Password + '\'' +
-
-                ", PhoneNumber='" + PhoneNumber + '\'' +
+                ", Phonenumber='" + Phonenumber + '\'' +
                 ", Capability='" + Capability + '\'' +
                 ", Experience=" + Experience +
+                ", Cost=" + Cost +
                 ", objectId='" + objectId + '\'' +
                 ", created=" + created +
                 ", updated=" + updated +
