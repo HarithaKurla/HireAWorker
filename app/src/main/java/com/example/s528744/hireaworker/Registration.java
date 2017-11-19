@@ -111,22 +111,22 @@ public class Registration extends AppCompatActivity {
 
         else {
             RegistrationInfo registerUser = new RegistrationInfo();
-            registerUser.Fname=firstName.getText().toString();
-            registerUser.Lname=lastName.getText().toString();
-            registerUser.Email=mail.getText().toString();
+            registerUser.fname=firstName.getText().toString();
+            registerUser.lname=lastName.getText().toString();
+            registerUser.email=mail.getText().toString();
             int selectedId = radioUserGroup.getCheckedRadioButtonId();
 
             userType = (RadioButton) findViewById(selectedId);
 
             String s = userType.getText().toString();
-            registerUser.Usertype=s;
-            registerUser.Address=address.getText().toString();
-            registerUser.Zipcode= Integer.parseInt(zip.getText().toString());
-            registerUser.Password=password.getText().toString();
-            registerUser.Phonenumber=phNum.getText().toString();
-            registerUser.Capability=cap.getSelectedItem().toString();
-            registerUser.Experience=Integer.parseInt(exp.getText().toString());
-            registerUser.Cost=Integer.parseInt(cost_hr.getText().toString());
+            registerUser.usertype=s;
+            registerUser.address=address.getText().toString();
+            registerUser.zipcode= Integer.parseInt(zip.getText().toString());
+            registerUser.password=password.getText().toString();
+            registerUser.phonenumber=phNum.getText().toString();
+            registerUser.capability=cap.getSelectedItem().toString();
+            registerUser.experience=Integer.parseInt(exp.getText().toString());
+            registerUser.cost=Integer.parseInt(cost_hr.getText().toString());
 
             Backendless.Data.of( RegistrationInfo.class ).save(registerUser, new AsyncCallback<RegistrationInfo>() {
 
