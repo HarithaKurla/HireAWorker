@@ -39,18 +39,20 @@ public class ReplyMsgActivity extends AppCompatActivity {
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                sendSMSMessage();
+                String phNum=txtphoneNo.getText().toString();
+                String msg= txtMessage.getText().toString();
+                sendSMSMessage(phNum,msg);
             }
         });
     }
 
-    protected void sendSMSMessage() {
+    protected void sendSMSMessage(String number,String msg) {
         phoneNo = txtphoneNo.getText().toString();
         message = txtMessage.getText().toString();
 
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.SEND_SMS)
-                != PackageManager.PERMISSION_GRANTED) {
+
+
+
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.SEND_SMS)) {
             } else {
@@ -59,7 +61,7 @@ public class ReplyMsgActivity extends AppCompatActivity {
                         MY_PERMISSIONS_REQUEST_SEND_SMS);
             }
         }
-    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {

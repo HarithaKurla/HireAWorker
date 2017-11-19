@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
 
                        IDataStore<RegistrationInfo> userStorage = Backendless.Data.of(RegistrationInfo.class);
                        DataQueryBuilder query = DataQueryBuilder.create();
-                       String value="Email='"+emailID+"' and User_Type='"+s+"'";
+                       String value="email='"+emailID+"' and usertype='"+s+"'";
                        query.setWhereClause(value);
                        userStorage.find(query, new AsyncCallback<List<RegistrationInfo>>() {
 
