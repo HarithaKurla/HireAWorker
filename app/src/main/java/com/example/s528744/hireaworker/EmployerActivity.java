@@ -91,7 +91,11 @@ public class EmployerActivity extends AppCompatActivity {
             zipcode.setError("Please enter zipcode");
         }
     }
-
+        public void feedback(View v)
+        {
+            Intent i=new Intent(this,FeedbackActivity.class);
+            startActivity(i);
+        }
     public void signout(View v){
         Intent i=new Intent(this,LoginActivity.class);
         startActivity(i);

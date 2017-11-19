@@ -124,6 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                                        case "Worker":
                                            if ((test.contains(emailID) && test.contains(passcode)) &&(test.contains(s)) ){
                                                Intent i1 = new Intent(getApplicationContext(), WorkerHome.class);
+                                               i1.putExtra("email",emailID);
                                                startActivity(i1);
 
                                            }
