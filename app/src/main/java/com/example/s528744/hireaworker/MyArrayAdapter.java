@@ -37,7 +37,7 @@ public class MyArrayAdapter extends ArrayAdapter {
 
         nameTV.setText(o1.getFname().toString());
         contactTV.setText(o1.getPhonenumber().toString() + "");
-        costTV.setText(o1.getCost());
+        costTV.setText(Integer.toString(o1.getCost()));
 
 
         return v;

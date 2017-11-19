@@ -43,7 +43,7 @@ public class SearchForWorker extends AppCompatActivity {
         setContentView(R.layout.activity_search_for_worker);
 
         final DataQueryBuilder queryBuilder = DataQueryBuilder.create();
-        String value="Zipcode="+Integer.parseInt(getIntent().getStringExtra("zipcode"))+" and Capability='"+getIntent().getStringExtra("capability")+"'";
+        String value="Zipcode="+Integer.parseInt(getIntent().getStringExtra("zipcode"))+" and capability='"+getIntent().getStringExtra("capability")+"'";
         queryBuilder.setWhereClause(value);
 
         final ListView lv = (ListView)   findViewById(R.id.listView);
