@@ -2,6 +2,7 @@ package com.example.s528744.hireaworker;
 
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.app.Activity;
@@ -31,10 +32,16 @@ public class ReplyMsgActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.worker1);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_reply_msg);
 
         sendBtn = (Button) findViewById(R.id.msgBTN);
         txtphoneNo = (EditText) findViewById(R.id.numET);
+        Intent i=new Intent(this,ReplyMsgActivity.class);
+        String num=getIntent().getStringExtra("phnumber");
+        txtphoneNo.setText(num);
         txtMessage = (EditText) findViewById(R.id.msgET);
 
         sendBtn.setOnClickListener(new View.OnClickListener() {

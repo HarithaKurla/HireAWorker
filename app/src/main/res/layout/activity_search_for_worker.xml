@@ -7,63 +7,21 @@
     android:background="@drawable/workerback"
     tools:context="com.example.s528744.hireaworker.SearchForWorker">
 
-    <LinearLayout
-        android:layout_width="362dp"
-        android:layout_height="39dp"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="109dp"
-            android:layout_height="match_parent"
-            android:text="Name"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="164dp"
-            android:layout_height="match_parent"
-            android:text="Contact"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="310dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Cost/hr"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-    </LinearLayout>
-
     <ListView
         android:id="@+id/listView"
-        android:layout_width="353dp"
-        android:layout_height="440dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.58000004"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
 </android.support.constraint.ConstraintLayout>

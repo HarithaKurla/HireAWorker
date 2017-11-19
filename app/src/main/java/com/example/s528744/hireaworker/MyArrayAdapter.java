@@ -28,7 +28,7 @@ public class MyArrayAdapter extends ArrayAdapter {
         View v = super.getView(position, convertView, parent);
         TextView nameTV = (TextView) v.findViewById(R.id.textView13);
         TextView contactTV = (TextView) v.findViewById(R.id.textView14);
-        TextView costTV = (TextView) v.findViewById(R.id.textView16);
+        //TextView costTV = (TextView) v.findViewById(R.id.textView16);
 
 
 
@@ -37,7 +37,7 @@ public class MyArrayAdapter extends ArrayAdapter {
 
         nameTV.setText(o1.getFname().toString());
         contactTV.setText(o1.getPhonenumber().toString() + "");
-        costTV.setText(Integer.toString(o1.getCost()));
+        //costTV.setText(o1.getCost().toString());
 
 
         return v;
