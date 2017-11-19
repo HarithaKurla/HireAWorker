@@ -6,7 +6,7 @@
 		Akshay Reddy Vontari
 		Raveendranath Eluri
 		
-	Please find apk in thisfolder(HireAWorker\app\build\outputs\apk)
+	Please find attached apk file app-debug.apk in the main folder
 		
 	Test credentials:
 	Employer:
