@@ -73,6 +73,8 @@ public class FeedbackActivity extends AppCompatActivity {
                             public void handleResponse(FeedbackInfo response) {
                                 Log.d("DB","Inserted values into table"+response);
                                 Toast.makeText(getApplicationContext(),"Submitted",Toast.LENGTH_SHORT).show();
+                                 final Intent i=new Intent(getApplicationContext(),EmployerActivity.class);
+                                startActivity(i);
                             }
 
                             @Override
