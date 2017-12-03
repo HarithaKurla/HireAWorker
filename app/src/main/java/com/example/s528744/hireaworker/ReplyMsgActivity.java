@@ -80,6 +80,8 @@ public class ReplyMsgActivity extends AppCompatActivity {
                     smsManager.sendTextMessage(phoneNo, null, message, null, null);
                     Toast.makeText(getApplicationContext(), "SMS sent.",
                             Toast.LENGTH_LONG).show();
+                    final Intent i=new Intent(getApplicationContext(),EmployerActivity.class);
+                    startActivity(i);
                 } else {
                     Toast.makeText(getApplicationContext(),
                             "SMS faild, please try again.", Toast.LENGTH_LONG).show();
