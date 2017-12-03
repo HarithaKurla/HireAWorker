@@ -18,8 +18,8 @@
 	Give Feedback:
 	phonenumber : 6605280008
 	Worker:
-	user:raghu@gmail.com
-	pwd:raghu	
+	user:sandeep@gmail.com
+	pwd:sandeep	
 	
 	Supported devices:
 	Nexsus 5-4.4.4 API 19
