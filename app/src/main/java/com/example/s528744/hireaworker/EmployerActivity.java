@@ -83,7 +83,7 @@ public class EmployerActivity extends AppCompatActivity {
             else
             {
                 Toast.makeText(getApplicationContext(),
-                        "Please select the desired area", Toast.LENGTH_SHORT).show();
+                        "Please select the capability", Toast.LENGTH_SHORT).show();
             }
         }
         else

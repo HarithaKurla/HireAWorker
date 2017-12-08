@@ -18,7 +18,7 @@ public class RegistrationInfo {
     public String phonenumber;
     public String capability;
     public int experience;
-    public String cost;
+    public int cost;
     public String objectId;
     public Date created;
     public Date updated;
@@ -28,10 +28,11 @@ public class RegistrationInfo {
 
     }
 
-    public RegistrationInfo(String fname, String phonenumber, String cost) {
+    public RegistrationInfo(String fname, String phonenumber,int experience, int cost) {
         this.fname = fname;
         this.phonenumber = phonenumber;
         this.cost = cost;
+        this.experience=experience;
     }
 
     public String getFname() {
@@ -114,11 +115,11 @@ public class RegistrationInfo {
         this.experience = experience;
     }
 
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 

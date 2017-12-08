@@ -46,20 +46,21 @@ public class SearchForWorker extends AppCompatActivity {
         String value="zipcode="+Integer.parseInt(getIntent().getStringExtra("zipcode"))+" and capability='"+getIntent().getStringExtra("capability")+"' and usertype='Worker'";
         queryBuilder.setWhereClause(value);
 
-        final ListView lv = (ListView)   findViewById(R.id.listView);
+        final ListView lv = (ListView) findViewById(R.id.listView);
 
 
         Backendless.Persistence.of(RegistrationInfo.class).find(queryBuilder, new AsyncCallback<List<RegistrationInfo>>() {
             @Override
             public void handleResponse(List<RegistrationInfo> response) {
                 list = new ArrayList<>();
-                Log.d("list view response is" ,"   kkkk"+response);
+
                 if (response.size() > 0) {
                     for (int i = 0; i < response.size(); i++) {
 //                    ListView lv = (ListView)   findViewById(R.id.ListerLV);
-                        list.add(new RegistrationInfo(response.get(i).getFname(), response.get(i).getPhonenumber(),response.get(i).getCost()));
+                        list.add(new RegistrationInfo(response.get(i).getFname(), response.get(i).getPhonenumber(),response.get(i).getExperience(),response.get(i).getCost()));
 
                     }
+                    Log.d("list view response is" ,"   kkkk"+list);
                     myArrayAdapter = new MyArrayAdapter(getApplicationContext(), R.layout.workers_listview, R.id.textView13, list);
                     lv.setAdapter(myArrayAdapter);
  lv.setOnItemClickListener(new ListView.OnItemClickListener() {
@@ -67,10 +68,7 @@ public class SearchForWorker extends AppCompatActivity {
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 RegistrationInfo workers=list.get(position);
                                 String phnum=workers.getPhonenumber();
-//                                String item= (String) parent.getItemAtPosition(position);
-//                                String value= (String) myArrayAdapter.getItem(position);
-//                                Log.d("aaaaaaaaaaaaaaaaaaaa",value);
-
+//
                                 if(parent.getItemAtPosition(position)==lv.getItemAtPosition(position)) {
                                     Intent i = new Intent(getApplicationContext(), ReplyMsgActivity.class);
                                 i.putExtra("phnumber",phnum);
@@ -83,22 +81,9 @@ public class SearchForWorker extends AppCompatActivity {
 
                             }
                         });
-//                    lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            if(position==0){
-//                                Intent i = new Intent(getApplicationContext(),WorkerDetails.class);
-//                                startActivity(i);
-//                            }
-//                            if(position==1){
-//                                Intent i = new Intent(getApplicationContext(),WorkerDetails1.class);
-//                                startActivity(i);
-//                            }
 //
-//                        }
-//                    });
                 } else {
-                    Toast.makeText(getApplicationContext(), "No orders found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No workers found", Toast.LENGTH_SHORT).show();
 
                 }
 
