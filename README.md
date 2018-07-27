@@ -3,7 +3,7 @@
 	Team Members Details:
 		Haritha Kurla
 		Aswini Vadlamudi
-		Akshay Reddy Vontari
+		Akshay Reddy
 		Raveendranath Eluri
 		
 	Please find attached apk file app-debug.apk in the main folder
